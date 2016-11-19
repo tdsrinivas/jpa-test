@@ -10,6 +10,7 @@ buildscript {
 	}
 }
 
+apply plugin: 'groovy'
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
@@ -30,6 +31,13 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-actuator')
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
 	compile('org.springframework.boot:spring-boot-starter-web')
+	compile('org.projectlombok:lombok:1.16.10')
+
 	runtime('com.h2database:h2')
+
+	testCompile('org.codehaus.groovy:groovy')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
+	testCompile('org.springframework.boot:spring-boot-starter-jetty')
+	testCompile('org.spockframework:spock-core:1.1-groovy-2.4-rc-1')
+	testCompile('org.spockframework:spock-spring:1.1-groovy-2.4-rc-1')
 }
